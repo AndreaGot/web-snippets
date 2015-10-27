@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"> </script>
+
+		<style type="text/css">
+	span{
+		padding:8px;
+		margin:8px;
+		color:blue;
+	}
+	div{
+		padding:8px;
+		margin:8px;
+	}
+		</style>
+
+	</head>
+	<body>
+ Premi un pulsante per selezionare una opzione
+		
+		<select id="choose" size="7">
+  <option value="1">Volvo</option>
+  <option value="2">Saab</option>
+  <option value="3">Opel</option>
+  <option value="4">Audi</option>
+</select>
+
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$(document).keydown(function(e) {   
+					event.preventDefault ? event.preventDefault() : event.returnValue = false;  
+					if (e.which > 49 && e.which < 54) {
+						$("#choose").val(e.which - 49);
+					}if (e.keyCode > 49 && e.keyCode < 54) {
+					    $("#choose").val(e.keyCode - 49);
+					}
+				});
+			}); 			
+		</script>
+	</body>
+</html>
